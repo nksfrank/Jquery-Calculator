@@ -6,8 +6,7 @@ var Calculator = function(){
 }
 
 Calculator.prototype.digit = function(a) {
-	this.r += a;
-	return this.r;
+	return this.r = this.r === 0 ? a : this.r + a;
 }
 Calculator.prototype.addition = function(a, b) { return a+b; }
 Calculator.prototype.multiply = function(a, b) { return a*b; }
@@ -17,8 +16,8 @@ Calculator.prototype.divide = function(a,b) { if(b == 0) throw new Error("Error:
 $(function() {
 	var calc = new Calculator();
 	
-	$("div#digit").on('click', function() {
-		var a = calc.digit(this.text());
+	$(".digit").on('click', function() {
+		var a = calc.digit($(this).text());
 		$("#result").text(a);
 	});
 });
