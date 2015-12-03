@@ -17,12 +17,13 @@ QUnit.test("Operands", function(assert) {
 	assert.equal(calc.divide(1, 1), 1, "1");
 })
 
-QUnit.test("Number", function(assert) {
+QUnit.test("Digit Manipulation", function(assert) {
 	var calc = new Calculator();
 	assert.equal(calc.r, 0, "New calculator init as 0");
 	
-	assert.equal(calc.number(1), 1, "1");
-	assert.equal(calc.number(2), 3, "3");
-	assert.equal(calc.number(-1), 2, "2");
-	assert.equal(calc.number(0.1), 2.1, "2.1");
+	assert.equal(calc.digit(1), 1, "1");
+	assert.equal(calc.digit(2), 3, "3");
+	assert.equal(calc.digit(-1), 2, "2");
+	assert.equal(calc.digit(0.1), 2.1, "2.1");
+	assert.equal(calc.digit(-0.1), 2, "2");
 })

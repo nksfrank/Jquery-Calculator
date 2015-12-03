@@ -5,7 +5,7 @@ var Calculator = function(){
 	this.r = 0;
 }
 
-Calculator.prototype.number = function(a) {
+Calculator.prototype.digit = function(a) {
 	this.r += a;
 	return this.r;
 }
@@ -17,8 +17,8 @@ Calculator.prototype.divide = function(a,b) { if(b == 0) throw new Error("Error:
 $(function() {
 	var calc = new Calculator();
 	
-	$("div#number").on('click', function() {
-		var a = calc.number(this.text());
+	$("div#digit").on('click', function() {
+		var a = calc.digit(this.text());
 		$("#result").text(a);
 	});
 });
